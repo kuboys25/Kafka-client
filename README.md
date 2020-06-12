@@ -6,6 +6,9 @@ Use of delegation token:
 
 `kafka-console-consumer --bootstrap-server <Broker1 IP>:9093,<Broker2 IP>:9093 --topic tst_gmc_doh_mca_db2_cdc_mbs_mist --consumer.config /home/luoshi/uat.client.properties --from-beginning`
 
+Reset offset: 
+`kafka-consumer-groups --bootstrap-server <Broker1 IP>:9093,<Broker2 IP>:9093 --to-offset 112000050 --command-config  /home/luoshi/client.properties --group gmctest_cg --reset-offsets --topic gmctest --execute`
+
 The required keystore might be stored here in Cloudera:
 /opt/cloudera/security/pki/zldhadnf01.central.health.jks
 /usr/lib/jvm/jre/lib/security/jssecacerts
