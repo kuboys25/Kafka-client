@@ -1,0 +1,22 @@
+Truststore - /usr/lib/jvm/jre/lib/security/jssecacerts
+Keystore location - /opt/cloudera/security/pki/
+
+
+/usr/lib/jvm/jre-1.8.0-openjdk/lib/security/jssecacerts
+
+Files like users.xml and authorizations.xml are in here, also content_repository and flowfile_repository:
+/var/run/cloudera-scm-agent/process
+
+Find all the files that older than 1 day:
+sudo find poc_2.1_1 -maxdepth 1 -mtime +0.5 -type f -exec ls -l {} \;
+
+Check the network adaptor specs:
+ ethtool ens192
+
+Filesystem type: df -T
+
+List block devices: lsblk
+
+# NiFi 
+/tmp/nifi/${kafka.topic}/${entryDate:toNumber():minus(3600000):format('yyyy')}/${entryDate:toNumber():minus(3600000):format('MM')}/${entryDate:toNumber():minus(3600000):format('dd')}/${entryDate:toNumber():minus(3600000):format('HH')}
+
